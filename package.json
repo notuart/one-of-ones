@@ -1,30 +1,33 @@
 {
-  "name": "u-contract",
+  "name": "one-of-ones",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Solidity smart contract to mint 1/1s NFTs (one of ones) implementing ERC721A.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "node": "hardhat node",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true npx hardhat test",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:js": "eslint --ignore-path .gitignore . --fix",
+    "lint:sol": "prettier --write \"contracts/**/*.sol\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.0.0",
-    "@nomiclabs/hardhat-etherscan": "^2.1.6",
-    "@nomiclabs/hardhat-waffle": "^2.0.0",
-    "chai": "^4.2.0",
-    "erc721a": "^2.1.0",
-    "ethereum-waffle": "^3.0.0",
-    "ethers": "^5.0.0",
-    "hardhat": "^2.6.5",
-    "hardhat-abi-exporter": "^2.3.1",
-    "hardhat-gas-reporter": "^1.0.7",
-    "solidity-coverage": "^0.7.19"
-  },
+  "keywords": [
+    "solidity",
+    "smart contract",
+    "erc721a",
+    "erc721",
+    "nft"
+  ],
+  "author": "notuart",
+  "license": "MIT",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.3.2",
-    "@openzeppelin/hardhat-upgrades": "^1.10.0",
-    "dotenv": "^10.0.0"
-  }
+    "erc721a": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notuart/one-of-ones.git"
+  },
+  "bugs": {
+    "url": "https://github.com/notuart/one-of-ones/issues"
+  },
+  "homepage": "https://github.com/notuart/one-of-ones#readme"
 }
