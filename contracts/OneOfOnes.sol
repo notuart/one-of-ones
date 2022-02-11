@@ -8,17 +8,21 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 abstract contract OneOfOnes is ERC721A, Ownable {
   mapping(uint256 => string) private _metadata;
 
+  modifier tokenExists(uint256 tokenId) {
+    require (_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+    _;
+  }
+
   function mint(string memory uri, address to) external onlyOwner {
-    setTokenURI(currentIndex, uri);
+    _metadata[currentIndex] = uri;
     _safeMint(to, 1);
   }
 
-  function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-    require (_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+  function tokenURI(uint256 tokenId) public view virtual override tokenExists(tokenId) returns (string memory) {
     return _metadata[tokenId];
   }
 
-  function setTokenURI(uint256 tokenId, string memory uri) public onlyOwner {
+  function setTokenURI(uint256 tokenId, string memory uri) public tokenExists(tokenId) onlyOwner {
     _metadata[tokenId] = uri;
   }
 }

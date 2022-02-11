@@ -1,9 +1,9 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Mock", function () {
+describe("NFT", function () {
   it("Should work", async function () {
-    const factory = await ethers.getContractFactory("Mock");
+    const factory = await ethers.getContractFactory("NFT");
     
     [owner, fren1, fren2, fren3, fren4, ...frens] = await ethers.getSigners();
 
