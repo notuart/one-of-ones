@@ -6,7 +6,11 @@ require("hardhat-gas-reporter");
 
 // npx hardhat run scripts/deploy.js --network rinkeby
 // Contract deployed to: 0xF4c038360C1931b357996ddA45C0E69B49A520eD
+// Contract deployed to: 0x6010CC4208a45AF5da36bF44500911C4B2E99742
 // npx hardhat verify --network rinkeby 0xF4c038360C1931b357996ddA45C0E69B49A520eD
+// https://rinkeby.etherscan.io/address/0xF4c038360C1931b357996ddA45C0E69B49A520eD#code
+// npx hardhat verify --network rinkeby 0x6010CC4208a45AF5da36bF44500911C4B2E99742
+// https://rinkeby.etherscan.io/address/0x6010CC4208a45AF5da36bF44500911C4B2E99742#code
 
 module.exports = {
   solidity: {

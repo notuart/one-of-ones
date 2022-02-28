@@ -26,8 +26,8 @@ abstract contract OneOfOnes is ERC721A, Ownable {
     return 1;
   }
 
-  function mint(Metadata memory metadata, address recipient) external onlyOwner {
-    _metadata[_currentIndex] = Metadata(metadata.name, metadata.description, metadata.image);
+  function mint(string memory name, string memory description, string memory image, address recipient) external onlyOwner {
+    _metadata[_currentIndex] = Metadata(name, description, image);
     _safeMint(recipient, 1);
   }
 
@@ -50,7 +50,7 @@ abstract contract OneOfOnes is ERC721A, Ownable {
     frozen = true;
   }
 
-  function updateMetadata(uint256 tokenId, Metadata memory metadata) public tokenExists(tokenId) onlyOwner {
-    _metadata[tokenId] = Metadata(metadata.name, metadata.description, metadata.image);
+  function updateMetadata(uint256 tokenId, string memory name, string memory description, string memory image) public tokenExists(tokenId) onlyOwner {
+    _metadata[tokenId] = Metadata(name, description, image);
   }
 }

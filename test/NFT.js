@@ -32,7 +32,7 @@ describe("NFT", function () {
       image: 'ipfs://1'
     }
 
-    let tx = await contract.connect(owner).mint(metadata, fren1.address);
+    let tx = await contract.connect(owner).mint(metadata.name, metadata.description, metadata.image, fren1.address);
     let receipt = await tx.wait();
     let tokenURI = await contract.tokenURI(1);
 
@@ -50,7 +50,7 @@ describe("NFT", function () {
       image: 'ipfs://2'
     }
 
-    let tx = await contract.connect(owner).mint(metadata, fren1.address);
+    let tx = await contract.connect(owner).mint(metadata.name, metadata.description, metadata.image, fren1.address);
     let receipt = await tx.wait();
     let tokenURI = await contract.tokenURI(1);
 
@@ -66,7 +66,7 @@ describe("NFT", function () {
       image: 'ipfs://222'
     }
 
-    tx = await contract.connect(owner).updateMetadata(1, updates);
+    tx = await contract.connect(owner).updateMetadata(1, updates.name, updates.description, updates.image);
     recept = await tx.wait();
     tokenURI = await contract.tokenURI(1);
 
