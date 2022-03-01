@@ -69,6 +69,7 @@ abstract contract OneOfOnes is ERC721A, Ownable {
   }
 
   function updateMetadata(uint256 tokenId, string memory name, string memory description, string memory image) public tokenExists(tokenId) onlyOwner {
+    require (!frozen, "ERC721Metadata: metadata is frozen");
     _metadata[tokenId] = Metadata(name, description, image);
   }
 }

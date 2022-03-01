@@ -76,4 +76,50 @@ describe("NFT", function () {
     expect(updated.description).equals(updates.description);
     expect(updated.image).equals(updates.image);
   });
+
+  it("Should freeze metadata", async function () {
+    const metadata = {
+      name: 'My second NFT #2',
+      description: 'Also unique and special', 
+      image: 'ipfs://2'
+    }
+
+    let tx = await contract.connect(owner).mint(metadata.name, metadata.description, metadata.image, fren1.address);
+    let receipt = await tx.wait();
+    let tokenURI = await contract.tokenURI(1);
+
+    const initial = decode(tokenURI);
+
+    expect(initial.name).equals(metadata.name);
+    expect(initial.description).equals(metadata.description);
+    expect(initial.image).equals(metadata.image);
+
+    // Freeze
+    tx = await contract.connect(owner).freeze();
+    await tx.wait();
+
+    const updates = {
+      name: 'This is not really my second NFT #2',
+      description: 'But it is unique and special', 
+      image: 'ipfs://222'
+    }
+
+    let message; 
+    try {
+      tx = await contract.connect(owner).updateMetadata(1, updates.name, updates.description, updates.image);
+      await tx.wait();
+    } catch (error) {
+      message = error.toString();
+    }
+    
+    expect(message).contain('ERC721Metadata: metadata is frozen');
+
+    tokenURI = await contract.tokenURI(1);
+
+    const updated = decode(tokenURI);
+
+    expect(updated.name).equals(initial.name);
+    expect(updated.description).equals(initial.description);
+    expect(updated.image).equals(initial.image);
+  });
 });
