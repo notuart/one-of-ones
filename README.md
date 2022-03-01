@@ -28,6 +28,7 @@ contract Metapond is OneOfOnes {
 
 ## Roadmap
 
+- [ ] Add more information (how to use, etherscan screenshots)
 - [ ] Add contract factory
 - [x] Add metadata freeze functionality
 - [x] Increase test coverage
