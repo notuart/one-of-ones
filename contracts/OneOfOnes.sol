@@ -2,6 +2,24 @@
 
 pragma solidity ^0.8.4;
 
+/**
+                   @@@@              @@@@@@@@@(                        
+               @@@@@@@@@@@@        @@@@@@@@@@@@@@                      
+              @@@@@    @@@@@      @@@@@      @@@@@                     
+             @@@@        @@@@     @@@@@      @@@@@                     
+             @@@@        @@@@      @@@@@@@@@@@@@@                      
+              @@          @@         &@@@@@@@@*                        
+                                                                      
+                   @@@@                                                
+                   @@@@           @@@@        @@@@                     
+             @@@@@@@@@@@@@@@@     @@@@       %@@@@                     
+              @@@@@@@@@@@@@@       @@@@@@//@@@@@@                      
+                   @@@@              @@@@@@@@@@                        
+                   @@@@                       
+
+                  Created by notu @notuart    
+ */
+
 import "base64-sol/base64.sol";
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
