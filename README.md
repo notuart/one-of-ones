@@ -28,8 +28,9 @@ contract Metapond is OneOfOnes {
 
 ## Roadmap
 
-- [] Add metadata freeze functionality
-- [] Increase test coverage
+- [ ] Add contract factory
+- [x] Add metadata freeze functionality
+- [x] Increase test coverage
 
 See the [open issues](https://github.com/notuart/one-of-ones/issues) for a full list of proposed features (and known issues).
 
@@ -58,6 +59,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-- no+u (owner) - [@notuart](https://twitter.com/notuart)
+- notu (owner) - [@notuart](https://twitter.com/notuart)
 
 Project Link: [https://github.com/notuart/one-of-ones](https://github.com/notuart/one-of-ones)
