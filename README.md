@@ -28,6 +28,7 @@ contract Metapond is OneOfOnes {
 
 ## Roadmap
 
+- [ ] Create dapp to enable artists to deploy their own contracts
 - [ ] Add more information (how to use, etherscan screenshots)
 - [ ] Add contract factory
 - [x] Add metadata freeze functionality
