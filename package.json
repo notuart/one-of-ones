@@ -1,6 +1,6 @@
 {
   "name": "one-of-ones",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Solidity smart contract to mint 1/1s NFTs (one of ones) implementing ERC721A.",
   "scripts": {
     "node": "hardhat node",
