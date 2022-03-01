@@ -12,7 +12,7 @@ npm install --save-dev one-of-ones
 
 ## Usage
 
-Once installed, you can use the contract in the library by importing it as follows:
+Once installed, you can use the contract by importing it as follows:
 
 ```solidity
 // SPDX-License-Identifier: MIT
